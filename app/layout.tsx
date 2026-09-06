@@ -1,0 +1,34 @@
+import { Analytics } from '@vercel/analytics/next'
+import type { Metadata, Viewport } from 'next'
+import './globals.css'
+
+const siteUrl = 'https://eva91casino.vercel.app'
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: 'Eva Casino — официальный сайт, зеркало и игра онлайн',
+  description: 'Eva Casino официальный сайт: узнайте, как найти рабочее зеркало, играть в казино онлайн, выбрать слоты и бонусы, а также соблюдать правила ответственной игры.',
+  alternates: { canonical: '/' },
+  robots: { index: true, follow: true },
+  openGraph: { type: 'website', locale: 'ru_RU', url: siteUrl, siteName: 'Eva Casino', title: 'Eva Casino — игра онлайн', description: 'Официальная информация об Eva Casino, играх онлайн, бонусах и безопасном доступе.' },
+  twitter: { card: 'summary', title: 'Eva Casino — игра онлайн', description: 'Официальная информация об Eva Casino, играх онлайн и безопасном доступе.' },
+  icons: { icon: '/favicon.svg', apple: '/favicon.svg' },
+}
+
+export const viewport: Viewport = { width: 'device-width', initialScale: 1, colorScheme: 'dark', themeColor: '#11100f', userScalable: true }
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="ru" className="bg-background">
+      <head>
+        <meta name="yandex-verification" content="" />
+        <meta name="theme-color" content="#11100f" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      </head>
+      <body className="antialiased">
+        {children}
+        {process.env.NODE_ENV === 'production' && <Analytics />}
+      </body>
+    </html>
+  )
+}
