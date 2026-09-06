@@ -21,7 +21,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ru" className="bg-background">
       <head>
-        <meta name="yandex-verification" content="" />
+       <meta name="yandex-verification" content="5666987faad238f5" />
         <meta name="theme-color" content="#11100f" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <script
